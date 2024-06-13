@@ -4,7 +4,7 @@ import random
 from ec2_metadata import ec2_metadata
 from dotenv import load_dotenv
 
-load_dotenv('token.env')
+load_dotenv()
 
 token = str(os.getenv('TOKEN'))
 
