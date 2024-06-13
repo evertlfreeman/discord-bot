@@ -4,19 +4,19 @@ import random
 from ec2_metadata import ec2_metadata
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv() 
 
-token = str(os.getenv('TOKEN'))
 
 intents = discord.Intents.default()
 intents.messages = True
-
+intents.message_content = True
 
 
 client = discord.Client(intents=intents)
+token = str(os.getenv('TOKEN'))
 
-print('This is my Ec2_metadata.region:', ec2_metadata.region)
-print('This is my Ec2_metadata.instance.id:', ec2_metadata.instance_id)
+#print('This is my Ec2_metadata.region:', ec2_metadata.region)
+#print('This is my Ec2_metadata.instance.id:', ec2_metadata.instance_id)
 
 @client.event
 async def on_ready():
